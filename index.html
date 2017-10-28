@@ -1,12 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Slap Object Game</title>
-	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="">
-	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>SlapGame</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="game.css">
 </head>
 <body>
-	
-	<script src=""></script>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<span>Health:<span id="health">--</span></span><br>
+			<span>Name:<span id="name">--</span><br>
+			<span>Hits:<span id="hits">--</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<img src="//placehold.it//200x200" alt="">
+		</div>
+		<div class="col-xs-12 text-center">
+			<button onclick="slap('Brandon')"id="slap">SLAP</button>
+			<button onclick="punch('Brandon')" id="punch">PUNCH</button>
+			<button onclick="kick('Brandon')" id="punch">KICK</button>
+			<button onclick="giveItems('Brandon','flame')">FLAME</button>
+			<button onclick="giveItems('Brandon','spikes')">SPIKES</button>
+			<button onclick="giveItems('Brandon','shield')">SHIELD</button>
+			
+		</div>
+	</div>
+
+</div>	
+
+
+
+	<script src="game.js"></script>
 </body>
 </html>
