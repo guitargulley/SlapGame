@@ -21,15 +21,17 @@
 		<div class="col-xs-12 text-center">
 			<img src="//placehold.it//200x200" alt="">
 		</div>
-		<div class="col-xs-12 text-center">
-			<button onclick="slap('Brandon')"id="slap">SLAP</button>
-			<button onclick="punch('Brandon')" id="punch">PUNCH</button>
-			<button onclick="kick('Brandon')" id="punch">KICK</button>
-			<button onclick="giveItems('Brandon','flame')">FLAME</button>
-			<button onclick="giveItems('Brandon','spikes')">SPIKES</button>
-			<button onclick="giveItems('Brandon','shield')">SHIELD</button>
-			
+		<div class="col-xs-12 text-center playBtns" id="playBtns">
+			<button class="slap" onclick="slap('Brandon')"id="slap">SLAP</button>
+			<button class="punch" onclick="punch('Brandon')" id="punch">PUNCH</button>
+			<button class="kick" onclick="kick('Brandon')" id="punch">KICK</button>
 		</div>
+		<div class="col-xs-12 text-center" id="itemBtns">
+			<button class="flame" onclick="giveItems('Brandon','flame')" id="flame">FLAME</button>
+			<button class="spikes" onclick="giveItems('Brandon','spikes')" id="spikes">SPIKES</button>
+			<button class="shield" onclick="giveItems('Brandon','shield')" id="shield">SHIELD</button>
+		</div>
+			
 	</div>
 
 </div>	
