@@ -2,7 +2,8 @@
 
 var mario = new Player('Mario', 100, 0)
 var luigi = new Player('Luigi', 100, 0)
-
+var playerImg = document.getElementById('player-img')
+var winImg = document.getElementById('win-img')
 var modsArray = []
 var players = []
 players.push(mario, luigi)
@@ -42,22 +43,28 @@ function play(playerName){
     document.getElementById('game-div').classList.remove('hidden')
     document.getElementById('play').classList.add('hidden')
     update(playerName)
+    if(playerName == 'Mario'){
+        playerImg.src = 'images/mario.png'
+    }else{
+        playerImg.src = 'images/luigi.png'
+    }
 }
-function playAgain(playerName){
-    var player = findPlayer(playerName)
-    document.getElementById('itemBtns').classList.remove('hidden')
-    document.getElementById('playBtns').classList.remove('hidden')
-    document.getElementById('game-div').classList.remove('hidden')
+function playAgain(){
     document.getElementById('play-again').classList.add('hidden')
-    player.health = 100
-    player.hits = 0
-    update(playerName)
+    document.getElementById('play').classList.remove('hidden')
+    
+    
 }
-function showWinner(){
+function showWinner(playerName){
     document.getElementById('itemBtns').classList.add('hidden')
     document.getElementById('playBtns').classList.add('hidden')
     document.getElementById('game-div').classList.add('hidden')
     document.getElementById('play-again').classList.remove('hidden')
+    if(playerName == 'Mario'){
+        winImg.src = 'images/Mario-win.png'
+    }else{
+        winImg.src = 'images/luigi-win.png'
+    }
     document.getElementById('winner').innerHTML=`<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
 }
 //Add items into player object==========================
@@ -133,7 +140,7 @@ function update(playerName) {
     var player = findPlayer(playerName)
     if (player.health <= 0) {
         player.health = 0
-        showWinner()    
+        showWinner(playerName)    
     }
     document.getElementById('health').innerText = player.health.toFixed(1)
     document.getElementById('hits').innerText = player.hits
