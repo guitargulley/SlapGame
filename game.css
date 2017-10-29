@@ -1,1 +1,60 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+.header{
+    background-color: rgba(1, 95, 201, 1);
+    color:whitesmoke;
+    
+}
+button{
+    width:70px;
+    border-radius: 10px;
+    outline: none
+}
+.item-buttons img{
+    width: 25px;
+    height: 25px;
+}
+.item-buttons button{
+    border:none;
+    width:50px;
+}
+img{
+    height:300px;
+}
+.info{
+    display:none;
+}
+.item-button:hover .info{
+    display: inline-block;
+}
+.item-button:hover button{
+    background-color:rgba(0, 0, 0, 0.384);
+    color:whitesmoke;
+}
+.item-button button{
+    border:none;
+    background-color:transparent;
+    color:transparent;
+}
+.playBtns{
+    padding-top:100px;
+}
+.slap{
+    margin-bottom: 25px;
+}
+.punch{
+    margin-bottom: 25px;
+}
+.play-btn:hover button{
+    background-color:rgba(255, 1, 33, 1);
+}
+.player-display{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color:rgba(255, 1, 33, 1);
+    color:whitesmoke;
+}
+.game-play{
+    background-color: grey;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}

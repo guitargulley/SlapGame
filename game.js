@@ -1,17 +1,17 @@
 //global variables====================================
 
-var brandon = new Player('Brandon', 100, 0)
-var john = new Player('John', 100, 0)
+var mario = new Player('Mario', 100, 0)
+var luigi = new Player('Luigi', 100, 0)
 
 var modsArray = []
 var players = []
-players.push(brandon, john)
+players.push(mario, luigi)
 console.log(players)
 
 var items = {
-    flame: new Item('Flame', 2, 'Increases damage from hit by 2'),
-    spikes: new Item('Spikes', 1.5, 'Increases damage from hit by 1.5'),
-    shield: new Item('Shield', .5, 'cuts damage in half')
+    flame: new Item('Flame', 1.5, 'Increases damage from hit by 1.5'),
+    spikes: new Item('Spikes', 1.2, 'Increases damage from hit by 1.2'),
+    shield: new Item('Shield', .7, 'reduces damage')
 }
 console.log(items)
 //Constructor functions ================================
@@ -47,11 +47,11 @@ function showWinner(){
 //Add items into player object==========================
 
 function giveItems(playerName, itemName) {
-    // debugger
+    //  debugger
     var player = findPlayer(playerName)
     var item = findItems(itemName)
     player.items.push(item)
-    console.log(brandon)
+    
     addMods(player)
     hideBtn()
     
@@ -146,5 +146,5 @@ function update(playerName) {
 
 
 
-update('Brandon')
+update('Mario')
 

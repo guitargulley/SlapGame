@@ -10,26 +10,50 @@
 </head>
 <body>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12">
+	<div class="row header">
+		<div class="col-xs-12 text-center">
+			<h1>Slap em</h1>
+		</div>
+	</div>
+	<div class="row player-display">
+		<div class="col-xs-2  col-xs-offset-1 player-info text-left">
 			<span>Health:<span id="health">--</span></span><br>
 			<span>Name:<span id="name">--</span><br>
 			<span>Hits:<span id="hits">--</span>
 		</div>
+		<div class="col-xs-1">
+				<h4>Items: </h4>				
+		</div>
+			<div class="col-xs-4 text-left item-buttons" id="itemBtns">
+				<div class="item-button">
+					<button class="flame" onclick="giveItems('Mario','flame')" id="flame"><img src="images/flame.png" alt=""></button>
+					<span class="info">150% to damage</span>
+				</div>
+				<div class="item-button">
+
+					<button class="spikes" onclick="giveItems('Mario','spikes')" id="spikes"><img src="images/spike.png" alt=""></button>
+					<span class="info">120% to damage</span>
+				</div>
+				<div class="item-button">
+					<button class="shield" onclick="giveItems('Mario','shield')" id="shield"><img src="images/shield.png" alt=""></button>
+					<span class="info">70% to damage</span>
+				</div>
+		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-12 text-center">
-			<img src="//placehold.it//200x200" alt="">
+	<div class="row game-play">
+		<div class="col-xs-3 col-xs-offset-1 text-center">
+			<img src="images/mario.png" alt="">
 		</div>
-		<div class="col-xs-12 text-center playBtns" id="playBtns">
-			<button class="slap" onclick="slap('Brandon')"id="slap">SLAP</button>
-			<button class="punch" onclick="punch('Brandon')" id="punch">PUNCH</button>
-			<button class="kick" onclick="kick('Brandon')" id="punch">KICK</button>
-		</div>
-		<div class="col-xs-12 text-center" id="itemBtns">
-			<button class="flame" onclick="giveItems('Brandon','flame')" id="flame">FLAME</button>
-			<button class="spikes" onclick="giveItems('Brandon','spikes')" id="spikes">SPIKES</button>
-			<button class="shield" onclick="giveItems('Brandon','shield')" id="shield">SHIELD</button>
+		<div class="col-xs-3  text-left playBtns" id="playBtns">
+			<div class="play-btn">
+				<button class="slap" onclick="slap('Mario')"id="slap">SLAP</button> <br>
+			</div>
+			<div class="play-btn">
+				<button class="punch" onclick="punch('Mario')" id="punch">PUNCH</button><br>
+			</div>
+			<div class="play-btn">
+				<button class="kick" onclick="kick('Mario')" id="punch">KICK</button>
+			</div>
 		</div>
 			
 	</div>
