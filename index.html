@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,60 +9,116 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="game.css">
 </head>
+
 <body>
-<div class="container-fluid">
-	<div class="row header">
-		<div class="col-xs-12 text-center">
-			<h1>Slap em</h1>
+	<div class="container-fluid">
+		<div class="row header">
+			<div class="col-xs-12 text-center">
+				<h1>Slap em</h1>
+			</div>
 		</div>
-	</div>
-	<div class="row player-display">
-		<div class="col-xs-2  col-xs-offset-1 player-info text-left">
-			<span>Health:<span id="health">--</span></span><br>
-			<span>Name:<span id="name">--</span><br>
-			<span>Hits:<span id="hits">--</span>
-		</div>
-		<div class="col-xs-1">
-				<h4>Items: </h4>				
-		</div>
-			<div class="col-xs-4 text-left item-buttons" id="itemBtns">
-				<div class="item-button">
-					<button class="flame" onclick="giveItems('Mario','flame')" id="flame"><img src="images/flame.png" alt=""></button>
-					<span class="info">150% to damage</span>
-				</div>
-				<div class="item-button">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3 text-center">
+				<div id="play" class="play">
+					<span id="choose">
+						<h3>PICK YOUR CHARACTER</h3>
+					</span>
+					<div class="row text-center">
+						<div class="col-xs-6 text-center">
+							<img class="char-img" src="images/mario.png" alt="">
+							<button onclick="play('Mario')" class="play-btn" id="play-btn-mario">
+								<img class="coin-img" src="images/golden-coin.png" alt="">
+								<h4>Pick me!?</h4>
+							</button>
+						</div>
+						<div class="col-xs-6 text-center">
+							<img class="char-img" src="images/luigi.png" alt="">
+							<button onclick="play('Luigi')" class="play-btn" id="play-btn-luigi">
+								<img class="coin-img" src="images/golden-coin.png" alt="">
+								<h4>Pick me!?</h4>
+							</button>
+						</div>
+					</div>
 
-					<button class="spikes" onclick="giveItems('Mario','spikes')" id="spikes"><img src="images/spike.png" alt=""></button>
-					<span class="info">120% to damage</span>
 				</div>
-				<div class="item-button">
-					<button class="shield" onclick="giveItems('Mario','shield')" id="shield"><img src="images/shield.png" alt=""></button>
-					<span class="info">70% to damage</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3 text-center">
+				<div id="play-again" class="play-again hidden">
+					<span id="winner">--</span>
+					<img class="win-img" src="images/mario-win.png" alt="">
+					<button onclick="playAgain('Mario')" class="play-again-btn" id="play-again-btn">
+						<img class="coin-img" src="images/golden-coin.png" alt="">
+						<h4>Play Again?</h4>
+					</button>
 				</div>
-		</div>
-	</div>
-	<div class="row game-play">
-		<div class="col-xs-3 col-xs-offset-1 text-center">
-			<img src="images/mario.png" alt="">
-		</div>
-		<div class="col-xs-3  text-left playBtns" id="playBtns">
-			<div class="play-btn">
-				<button class="slap" onclick="slap('Mario')"id="slap">SLAP</button> <br>
-			</div>
-			<div class="play-btn">
-				<button class="punch" onclick="punch('Mario')" id="punch">PUNCH</button><br>
-			</div>
-			<div class="play-btn">
-				<button class="kick" onclick="kick('Mario')" id="punch">KICK</button>
 			</div>
 		</div>
-			
-	</div>
+		<div id="game-div" class="game-div hidden">
+			<div class="row player-display">
+				<div class="col-xs-2  col-xs-offset-1 player-info text-left">
+					<span>Health:
+						<span id="health">--</span>
+					</span>
+					<br>
+					<span>Name:
+						<span id="name">--</span>
+						<br>
+						<span>Hits:
+							<span id="hits">--</span>
+				</div>
+				<div class="col-xs-1">
+					<h4>Items: </h4>
+				</div>
+				<div class="col-xs-4 text-left item-buttons" id="itemBtns">
+					<div class="item-button">
+						<button class="flame" onclick="giveItems('Mario','flame')" id="flame">
+							<img src="images/flame.png" alt="">
+						</button>
+						<span class="info">150% to damage</span>
+					</div>
+					<div class="item-button">
 
-</div>	
+						<button class="spikes" onclick="giveItems('Mario','spikes')" id="spikes">
+							<img src="images/spike.png" alt="">
+						</button>
+						<span class="info">120% to damage</span>
+					</div>
+					<div class="item-button">
+						<button class="shield" onclick="giveItems('Mario','shield')" id="shield">
+							<img src="images/shield.png" alt="">
+						</button>
+						<span class="info">70% to damage</span>
+					</div>
+				</div>
+			</div>
+			<div class="row game-play">
+				<div class="col-xs-3 col-xs-offset-1 text-center">
+					<img src="images/mario.png" alt="">
+				</div>
+				<div class="col-xs-3  text-left playBtns" id="playBtns">
+					<div class="play-btn">
+						<button class="slap" onclick="slap('Mario')" id="slap">SLAP</button>
+						<br>
+					</div>
+					<div class="play-btn">
+						<button class="punch" onclick="punch('Mario')" id="punch">PUNCH</button>
+						<br>
+					</div>
+					<div class="play-btn">
+						<button class="kick" onclick="kick('Mario')" id="punch">KICK</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 
 
 
 	<script src="game.js"></script>
 </body>
+
 </html>

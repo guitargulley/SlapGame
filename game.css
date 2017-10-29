@@ -1,8 +1,43 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+body{
+    background-color:rgba(255, 1, 33, 1);
+    height: 100vh;
+}
 .header{
     background-color: rgba(1, 95, 201, 1);
     color:whitesmoke;
     
+}
+.play{
+    color:whitesmoke;
+}
+.play-again{
+    padding-top: 30px;
+    border: 3px solid white;
+    border-radius: 20px;
+    height:550px;
+    color:whitesmoke;
+}
+.char-img{
+    height: 400px;
+}
+.play button{
+    background-color: transparent;
+    border:none;
+    outline:none;
+}
+.coin-img{
+    width:100px;
+    height:100px;
+}
+.play-again-btn{
+    background-color:transparent;
+    border:none;
+    outline:none;
+}
+.win-img{
+    margin-top:30px;
+    height:400px;
 }
 button{
     width:70px;
@@ -52,6 +87,7 @@ img{
     padding-bottom: 15px;
     background-color:rgba(255, 1, 33, 1);
     color:whitesmoke;
+    height: 100px;
 }
 .game-play{
     background-color: grey;

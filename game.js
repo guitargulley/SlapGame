@@ -6,14 +6,12 @@ var luigi = new Player('Luigi', 100, 0)
 var modsArray = []
 var players = []
 players.push(mario, luigi)
-console.log(players)
 
 var items = {
     flame: new Item('Flame', 1.5, 'Increases damage from hit by 1.5'),
     spikes: new Item('Spikes', 1.2, 'Increases damage from hit by 1.2'),
     shield: new Item('Shield', .7, 'reduces damage')
 }
-console.log(items)
 //Constructor functions ================================
 
 function Player(name, health, hits, items) {
@@ -33,49 +31,59 @@ function hideBtn(){
 }
 function addBtn(){
     document.getElementById('itemBtns').classList.remove('hidden')
-    
-    //debugger
     modsArray.shift()
-    console.log(modsArray)
 }
-
+function play(playerName){
+    var player = findPlayer(playerName)
+    player.health = 100
+    player.hits = 0
+    document.getElementById('itemBtns').classList.remove('hidden')
+    document.getElementById('playBtns').classList.remove('hidden')
+    document.getElementById('game-div').classList.remove('hidden')
+    document.getElementById('play').classList.add('hidden')
+    update(playerName)
+}
+function playAgain(playerName){
+    var player = findPlayer(playerName)
+    document.getElementById('itemBtns').classList.remove('hidden')
+    document.getElementById('playBtns').classList.remove('hidden')
+    document.getElementById('game-div').classList.remove('hidden')
+    document.getElementById('play-again').classList.add('hidden')
+    player.health = 100
+    player.hits = 0
+    update(playerName)
+}
 function showWinner(){
-    //debugger
     document.getElementById('itemBtns').classList.add('hidden')
     document.getElementById('playBtns').classList.add('hidden')
+    document.getElementById('game-div').classList.add('hidden')
+    document.getElementById('play-again').classList.remove('hidden')
+    document.getElementById('winner').innerHTML=`<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
 }
 //Add items into player object==========================
 
 function giveItems(playerName, itemName) {
-    //  debugger
     var player = findPlayer(playerName)
     var item = findItems(itemName)
-    player.items.push(item)
-    
+    player.items.push(item) 
     addMods(player)
-    hideBtn()
-    
+    hideBtn()   
 }
 
 function addMods(player) {
-   // debugger
     for (var i = 0; i < player.items.length; i++) {
         var mod = player.items[i];
         modsArray.push(mod)
-        //return modsArray
     }
-    console.log(modsArray)
     return modsArray
 }
 function sumMods(modsArray){
     var output = 0
     for (var i = 0; i < modsArray.length; i++) {
         output += modsArray[i].modifier
-        console.log(output)
         return output
     }output = 1
     return output
-    console.log(output)
 }
 
 //Support functions for finding people, items============
@@ -84,14 +92,12 @@ function findItems(itemName) {
     for (var name in items) {
         if (name === itemName) {
             output = items[name]
-            console.log(output)
             return output
         }
     } return output
 }
 
 function findPlayer(playerName) {
-    console.log(playerName)
     var output = {}
     for (var i = 0; i < players.length; i++) {
         var player = players[i]
@@ -103,27 +109,22 @@ function findPlayer(playerName) {
 
 // Game Play Functions ==================================
 function slap(playerName) {
-    //debugger
     var player = findPlayer(playerName)
     player.health -= 1 * sumMods(modsArray)
     player.hits += 1
     update(playerName)
-    
-    
 }
 function punch(playerName) {
     var player = findPlayer(playerName)
     player.health -= 5 * sumMods(modsArray)
     player.hits += 1
-    update(playerName)
-    
+    update(playerName)   
 }
 function kick(playerName) {
     var player = findPlayer(playerName)
     player.health -= 10 * sumMods(modsArray)
     player.hits += 1
-    update(playerName)
-    
+    update(playerName)   
 }
 
 //Update Screen Functions ================================
@@ -134,17 +135,11 @@ function update(playerName) {
         player.health = 0
         showWinner()    
     }
-    document.getElementById('health').innerText = player.health
+    document.getElementById('health').innerText = player.health.toFixed(1)
     document.getElementById('hits').innerText = player.hits
     document.getElementById('name').innerText = player.name
     var player = findPlayer(playerName)
     player.items.splice(0)
-    console.log(player.items)
-    console.log(items)
 }
-
-
-
-
-update('Mario')
+//update(playerName)
 
