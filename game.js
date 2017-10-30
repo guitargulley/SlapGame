@@ -44,9 +44,9 @@ function play(playerName){
     document.getElementById('play').classList.add('hidden')
     update(playerName)
     if(playerName == 'Mario'){
-        playerImg.src = 'images/mario.png'
+        playerImg.src = 'images/Mario.png'
     }else{
-        playerImg.src = 'images/luigi.png'
+        playerImg.src = 'images/Luigi.png'
     }
 }
 function playAgain(){
