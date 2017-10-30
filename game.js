@@ -151,5 +151,5 @@ function update(activePlayer) {
     var player = findPlayer(activePlayer)
     player.items.splice(0)
 }
-//update(playerName)
+
 
