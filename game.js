@@ -6,6 +6,7 @@ var playerImg = document.getElementById('player-img')
 var winImg = document.getElementById('win-img')
 var modsArray = []
 var players = []
+var activePlayer = ''
 players.push(mario, luigi)
 
 var items = {
@@ -42,12 +43,14 @@ function play(playerName){
     document.getElementById('playBtns').classList.remove('hidden')
     document.getElementById('game-div').classList.remove('hidden')
     document.getElementById('play').classList.add('hidden')
-    update(playerName)
     if(playerName == 'Mario'){
         playerImg.src = 'images/Mario.png'
+        activePlayer = 'Mario'
     }else{
         playerImg.src = 'images/Luigi.png'
+        activePlayer = 'Luigi'
     }
+    update(activePlayer)
 }
 function playAgain(){
     document.getElementById('play-again').classList.add('hidden')
@@ -55,22 +58,22 @@ function playAgain(){
     
     
 }
-function showWinner(playerName){
+function showWinner(activePlayer){
     document.getElementById('itemBtns').classList.add('hidden')
     document.getElementById('playBtns').classList.add('hidden')
     document.getElementById('game-div').classList.add('hidden')
     document.getElementById('play-again').classList.remove('hidden')
-    if(playerName == 'Mario'){
-        winImg.src = 'images/Mario-win.png'
-    }else{
+    if(activePlayer == 'Mario'){
         winImg.src = 'images/luigi-win.png'
+    }else{
+        winImg.src = 'images/Mario-win.png'
     }
     document.getElementById('winner').innerHTML=`<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
 }
 //Add items into player object==========================
 
-function giveItems(playerName, itemName) {
-    var player = findPlayer(playerName)
+function giveItems(activePlayer, itemName) {
+    var player = findPlayer(activePlayer)
     var item = findItems(itemName)
     player.items.push(item) 
     addMods(player)
@@ -104,48 +107,48 @@ function findItems(itemName) {
     } return output
 }
 
-function findPlayer(playerName) {
+function findPlayer(activePlayer) {
     var output = {}
     for (var i = 0; i < players.length; i++) {
         var player = players[i]
-        if (player.name === playerName) {
+        if (player.name === activePlayer) {
             output = player
         }
     } return output
 }
 
 // Game Play Functions ==================================
-function slap(playerName) {
-    var player = findPlayer(playerName)
+function slap(activePlayer) {
+    var player = findPlayer(activePlayer)
     player.health -= 1 * sumMods(modsArray)
     player.hits += 1
-    update(playerName)
+    update(activePlayer)
 }
-function punch(playerName) {
-    var player = findPlayer(playerName)
+function punch(activePlayer) {
+    var player = findPlayer(activePlayer)
     player.health -= 5 * sumMods(modsArray)
     player.hits += 1
-    update(playerName)   
+    update(activePlayer)   
 }
-function kick(playerName) {
-    var player = findPlayer(playerName)
+function kick(activePlayer) {
+    var player = findPlayer(activePlayer)
     player.health -= 10 * sumMods(modsArray)
     player.hits += 1
-    update(playerName)   
+    update(activePlayer)   
 }
 
 //Update Screen Functions ================================
-function update(playerName) {
+function update(activePlayer) {
     addBtn()
-    var player = findPlayer(playerName)
+    var player = findPlayer(activePlayer)
     if (player.health <= 0) {
         player.health = 0
-        showWinner(playerName)    
+        showWinner(activePlayer)    
     }
     document.getElementById('health').innerText = player.health.toFixed(1)
     document.getElementById('hits').innerText = player.hits
     document.getElementById('name').innerText = player.name
-    var player = findPlayer(playerName)
+    var player = findPlayer(activePlayer)
     player.items.splice(0)
 }
 //update(playerName)

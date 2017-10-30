@@ -48,7 +48,7 @@
 				<div id="play-again" class="play-again hidden">
 					<span id="winner">--</span>
 					<img id="win-img" class="win-img" src="" alt="">
-					<button onclick="playAgain('Mario')" class="play-again-btn" id="play-again-btn">
+					<button onclick="playAgain(activePlayer)" class="play-again-btn" id="play-again-btn">
 						<img class="coin-img" src="images/golden-coin.png" alt="">
 						<h4>Play Again?</h4>
 					</button>
@@ -73,20 +73,20 @@
 				</div>
 				<div class="col-xs-4 text-left item-buttons" id="itemBtns">
 					<div class="item-button">
-						<button class="flame" onclick="giveItems('Mario','flame')" id="flame">
+						<button class="flame" onclick="giveItems(activePlayer,'flame')" id="flame">
 							<img src="images/flame.png" alt="">
 						</button>
 						<span class="info">150% to damage</span>
 					</div>
 					<div class="item-button">
 
-						<button class="spikes" onclick="giveItems('Mario','spikes')" id="spikes">
+						<button class="spikes" onclick="giveItems(activePlayer,'spikes')" id="spikes">
 							<img src="images/spike.png" alt="">
 						</button>
 						<span class="info">120% to damage</span>
 					</div>
 					<div class="item-button">
-						<button class="shield" onclick="giveItems('Mario','shield')" id="shield">
+						<button class="shield" onclick="giveItems(activePlayer,'shield')" id="shield">
 							<img src="images/shield.png" alt="">
 						</button>
 						<span class="info">70% to damage</span>
@@ -99,15 +99,15 @@
 				</div>
 				<div class="col-xs-3  text-left playBtns" id="playBtns">
 					<div class="play-btn">
-						<button class="slap" onclick="slap('Mario')" id="slap">SLAP</button>
+						<button class="slap" onclick="slap(activePlayer)" id="slap">SLAP</button>
 						<br>
 					</div>
 					<div class="play-btn">
-						<button class="punch" onclick="punch('Mario')" id="punch">PUNCH</button>
+						<button class="punch" onclick="punch(activePlayer)" id="punch">PUNCH</button>
 						<br>
 					</div>
 					<div class="play-btn">
-						<button class="kick" onclick="kick('Mario')" id="punch">KICK</button>
+						<button class="kick" onclick="kick(activePlayer)" id="punch">KICK</button>
 					</div>
 				</div>
 
