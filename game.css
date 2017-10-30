@@ -11,6 +11,10 @@ body{
 .play{
     color:whitesmoke;
 }
+.char-selection button{
+    display:block;
+    margin: 0 auto;
+}
 .play-again{
     padding-top: 30px;
     border: 3px solid white;
