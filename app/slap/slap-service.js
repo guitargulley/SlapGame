@@ -19,13 +19,13 @@ var items = {
     shield: new Item('Shield', -.4, 'reduces damage')
 }
 
-function Target(name, health, slap, punch, kick){
+function Target(name, health, jumpOn, throwTurtle, superSmash){
     this.name = name,
     this.health = health,
     this.attacks = {
-        slap: slap,
-        punch: punch,
-        kick: kick
+        jumpOn: jumpOn,
+        throwTurtle: throwTurtle,
+        superSmash: superSmash
     };
     this.items = [],
     this.hits = 0
