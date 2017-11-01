@@ -15,12 +15,12 @@ function SlapController() {
         var template = ''
         for (var item in items){
             if(items[item].name =='Flame'){
-            template += `<button type="button" class="btn" onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img" src="../../images/flame.png" style="width:25px;height:25px"></button>`
+            template += `<button type="button" class="btn" onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img" src="../images/flame.png" style="width:25px;height:25px"></button>`
             }else if(items[item].name == 'Spikes'){
-                template += `<button type="button" class="btn" onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img" src="../../images/spike.png" style="width:25px;height:25px";></button>`
+                template += `<button type="button" class="btn" onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img" src="../images/spike.png" style="width:25px;height:25px";></button>`
                 
             }else{
-                template += `<button type="button" class="btn"  onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img text-center" src="../../images/shield.png" style="width:25px;height:25px"></button>`
+                template += `<button type="button" class="btn"  onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img text-center" src="../images/shield.png" style="width:25px;height:25px"></button>`
                 
             }
         }
