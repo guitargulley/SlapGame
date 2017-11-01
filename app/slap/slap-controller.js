@@ -57,6 +57,7 @@ function SlapController() {
     //public
     
     this.play= function play(targetName){
+        
         slapService.setTarget(targetName)
         target = slapService.getTarget()
         document.getElementById('itemBtns').classList.remove('hidden')
@@ -73,8 +74,10 @@ function SlapController() {
     }
 
     this.playAgain = function playAgain() {
+        
         document.getElementById('play-again').classList.add('hidden')
         document.getElementById('play').classList.remove('hidden')
+        slapService.playAgain()
         
     }
 

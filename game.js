@@ -57,7 +57,7 @@ function play(playerName){
 //     document.getElementById('play').classList.remove('hidden')
     
     
-}
+// }
 // function showWinner(activePlayer){
 //     document.getElementById('itemBtns').classList.add('hidden')
 //     document.getElementById('playBtns').classList.add('hidden')

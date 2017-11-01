@@ -78,6 +78,7 @@ this.getItems = function getItems(){
     return JSON.parse(JSON.stringify(items))
 }
 this.playAgain = function playAgain(){
-    target = {}
+    target.health = 100
+    target.hits = 0
 }
 }
