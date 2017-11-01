@@ -56,6 +56,13 @@ button{
     border:none;
     width:50px;
 }
+.item-img{
+    width: 10px;
+}
+.btn{
+    background-color:transparent;
+    width: 25px;
+}
 img{
     height:300px;
 }
@@ -65,10 +72,10 @@ img{
 .item-button:hover .info{
     display: inline-block;
 }
-.item-button:hover button{
+/* .item-button:hover button{
     background-color:rgba(0, 0, 0, 0.384);
     color:whitesmoke;
-}
+} */
 .item-button button{
     border:none;
     background-color:transparent;

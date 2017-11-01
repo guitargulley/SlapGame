@@ -1,7 +1,7 @@
 //global variables====================================
 
-var mario = new Player('Mario', 100, 0)
-var luigi = new Player('Luigi', 100, 0)
+//var mario = new Player('Mario', 100, 0)
+//var luigi = new Player('Luigi', 100, 0)
 var playerImg = document.getElementById('player-img')
 var winImg = document.getElementById('win-img')
 var modsArray = []
@@ -9,25 +9,25 @@ var players = []
 var activePlayer = ''
 players.push(mario, luigi)
 
-var items = {
-    flame: new Item('Flame', 1.5, 'Increases damage from hit by 1.5'),
-    spikes: new Item('Spikes', 1.2, 'Increases damage from hit by 1.2'),
-    shield: new Item('Shield', .7, 'reduces damage')
-}
+// var items = {
+//     flame: new Item('Flame', 1.5, 'Increases damage from hit by 1.5'),
+//     spikes: new Item('Spikes', 1.2, 'Increases damage from hit by 1.2'),
+//     shield: new Item('Shield', .7, 'reduces damage')
+// }
 //Constructor functions ================================
 
-function Player(name, health, hits, items) {
-    this.name = name,
-        this.health = health,
-        this.hits = hits,
-        this.items = []
-}
+// function Player(name, health, hits, items) {
+//     this.name = name,
+//         this.health = health,
+//         this.hits = hits,
+//         this.items = []
+// }
 
-function Item(name, modifier, description) {
-    this.name = name,
-        this.modifier = modifier,
-        this.description = description
-}
+// function Item(name, modifier, description) {
+//     this.name = name,
+//         this.modifier = modifier,
+//         this.description = description
+// }
 function hideBtn(){
     document.getElementById('itemBtns').classList.add('hidden')
 }
@@ -52,24 +52,24 @@ function play(playerName){
     }
     update(activePlayer)
 }
-function playAgain(){
-    document.getElementById('play-again').classList.add('hidden')
-    document.getElementById('play').classList.remove('hidden')
+// function playAgain(){
+//     document.getElementById('play-again').classList.add('hidden')
+//     document.getElementById('play').classList.remove('hidden')
     
     
 }
-function showWinner(activePlayer){
-    document.getElementById('itemBtns').classList.add('hidden')
-    document.getElementById('playBtns').classList.add('hidden')
-    document.getElementById('game-div').classList.add('hidden')
-    document.getElementById('play-again').classList.remove('hidden')
-    if(activePlayer == 'Mario'){
-        winImg.src = 'images/luigi-win.png'
-    }else{
-        winImg.src = 'images/Mario-win.png'
-    }
-    document.getElementById('winner').innerHTML=`<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
-}
+// function showWinner(activePlayer){
+//     document.getElementById('itemBtns').classList.add('hidden')
+//     document.getElementById('playBtns').classList.add('hidden')
+//     document.getElementById('game-div').classList.add('hidden')
+//     document.getElementById('play-again').classList.remove('hidden')
+//     if(activePlayer == 'Mario'){
+//         winImg.src = 'images/luigi-win.png'
+//     }else{
+//         winImg.src = 'images/Mario-win.png'
+//     }
+//     document.getElementById('winner').innerHTML=`<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
+// }
 //Add items into player object==========================
 
 function giveItems(activePlayer, itemName) {
@@ -107,35 +107,35 @@ function findItems(itemName) {
     } return output
 }
 
-function findPlayer(activePlayer) {
-    var output = {}
-    for (var i = 0; i < players.length; i++) {
-        var player = players[i]
-        if (player.name === activePlayer) {
-            output = player
-        }
-    } return output
-}
+// function findPlayer(activePlayer) {
+//     var output = {}
+//     for (var i = 0; i < players.length; i++) {
+//         var player = players[i]
+//         if (player.name === activePlayer) {
+//             output = player
+//         }
+//     } return output
+// }
 
 // Game Play Functions ==================================
-function slap(activePlayer) {
-    var player = findPlayer(activePlayer)
-    player.health -= 1 * sumMods(modsArray)
-    player.hits += 1
-    update(activePlayer)
-}
-function punch(activePlayer) {
-    var player = findPlayer(activePlayer)
-    player.health -= 5 * sumMods(modsArray)
-    player.hits += 1
-    update(activePlayer)   
-}
-function kick(activePlayer) {
-    var player = findPlayer(activePlayer)
-    player.health -= 10 * sumMods(modsArray)
-    player.hits += 1
-    update(activePlayer)   
-}
+// function slap(activePlayer) {
+//     var player = findPlayer(activePlayer)
+//     player.health -= 1 * sumMods(modsArray)
+//     player.hits += 1
+//     update(activePlayer)
+// }
+// function punch(activePlayer) {
+//     var player = findPlayer(activePlayer)
+//     player.health -= 5 * sumMods(modsArray)
+//     player.hits += 1
+//     update(activePlayer)   
+// }
+// function kick(activePlayer) {
+//     var player = findPlayer(activePlayer)
+//     player.health -= 10 * sumMods(modsArray)
+//     player.hits += 1
+//     update(activePlayer)   
+// }
 
 //Update Screen Functions ================================
 function update(activePlayer) {

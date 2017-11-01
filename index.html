@@ -26,14 +26,14 @@
 					<div class="row text-center char-selection">
 						<div class="col-xs-6 text-center">
 							<img class="char-img" src="images/Mario.png" alt="">
-							<button onclick="play('Mario')" class="play-btn" id="play-btn-mario">
+							<button onclick="app.controllers.slapController.play('mario')" class="play-btn" id="play-btn-mario">
 								<img class="coin-img" src="images/golden-coin.png" alt="">
 								<h4>Pick me!?</h4>
 							</button>
 						</div>
 						<div class="col-xs-6 text-center">
 							<img class="char-img" src="images/Luigi.png" alt="">
-							<button onclick="play('Luigi')" class="play-btn" id="play-btn-luigi">
+							<button onclick="app.controllers.slapController.play('luigi')" class="play-btn" id="play-btn-luigi">
 								<img class="coin-img" src="images/golden-coin.png" alt="">
 								<h4>Pick me!?</h4>
 							</button>
@@ -48,7 +48,7 @@
 				<div id="play-again" class="play-again hidden">
 					<span id="winner">--</span>
 					<img id="win-img" class="win-img" src="" alt="">
-					<button onclick="playAgain(activePlayer)" class="play-again-btn" id="play-again-btn">
+					<button onclick="app.controllers.slapController.playAgain()" class="play-again-btn" id="play-again-btn">
 						<img class="coin-img" src="images/golden-coin.png" alt="">
 						<h4>Play Again?</h4>
 					</button>
@@ -71,25 +71,8 @@
 				<div class="col-xs-1">
 					<h4>Items: </h4>
 				</div>
-				<div class="col-xs-4 text-left item-buttons" id="itemBtns">
-					<div class="item-button">
-						<button class="flame" onclick="giveItems(activePlayer,'flame')" id="flame">
-							<img src="images/flame.png" alt="">
-						</button>
-						<span class="info">150% to damage</span>
-					</div>
-					<div class="item-button">
-
-						<button class="spikes" onclick="giveItems(activePlayer,'spikes')" id="spikes">
-							<img src="images/spike.png" alt="">
-						</button>
-						<span class="info">120% to damage</span>
-					</div>
-					<div class="item-button">
-						<button class="shield" onclick="giveItems(activePlayer,'shield')" id="shield">
-							<img src="images/shield.png" alt="">
-						</button>
-						<span class="info">70% to damage</span>
+				<div class="col-xs-2 text-left item-buttons" id="itemBtns">
+					<div id="items" class="item-button">
 					</div>
 				</div>
 			</div>
@@ -97,17 +80,17 @@
 				<div class="col-xs-3 col-xs-offset-1 text-center">
 					<img id="player-img" src="" alt="">
 				</div>
-				<div class="col-xs-3  text-left playBtns" id="playBtns">
+				<div class="col-xs-2  text-left playBtns" id="playBtns">
 					<div class="play-btn">
-						<button class="slap" onclick="slap(activePlayer)" id="slap">SLAP</button>
+						<button class="slap" onclick="app.controllers.slapController.attack('slap')" id="slap">SLAP</button>
 						<br>
 					</div>
 					<div class="play-btn">
-						<button class="punch" onclick="punch(activePlayer)" id="punch">PUNCH</button>
+						<button class="punch" onclick="app.controllers.slapController.attack('punch')" id="punch">PUNCH</button>
 						<br>
 					</div>
 					<div class="play-btn">
-						<button class="kick" onclick="kick(activePlayer)" id="punch">KICK</button>
+						<button class="kick" onclick="app.controllers.slapController.attack('kick')" id="kick">KICK</button>
 					</div>
 				</div>
 
@@ -118,7 +101,11 @@
 
 
 
-	<script src="game.js"></script>
+	<!-- <script src="game.js"></script> -->
+
+	<script src="app/slap/slap-service.js"></script>
+	<script src="app/slap/slap-controller.js"></script>
+	<script src="app/init.js"></script>
 </body>
 
 </html>
