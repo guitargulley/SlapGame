@@ -10,6 +10,7 @@ function SlapController() {
     var target;
     var playerImg = document.getElementById('player-img')
     var winImg = document.getElementById('win-img')
+    var winner = document.getElementById('winner')
     function drawItems(){
         var items = slapService.getItems()
         var template = ''
@@ -35,20 +36,30 @@ function SlapController() {
         document.getElementById('play-again').classList.remove('hidden')
         if (target.name == 'Mario') {
             winImg.src = 'images/bowser-win.png'
+            winner.innerHTML = `<h3>BOWSER SMASHED MARIO!!! PLAY AGAIN?</h3>`
         } else if(target.name == 'Luigi'){
             winImg.src = 'images/yoshi-win.png'
+            winner.innerHTML = `<h3>YOSHI SMASHED LUIGI!!! PLAY AGAIN?</h3>`
+            
         } else if(target.name == 'Peach'){
             winImg.src = 'images/toad-win.png'
+            winner.innerHTML = `<h3>TOAD SMASHED PRINCESS PEACH!!! PLAY AGAIN?</h3>`
+            
         }else if(target.name == 'Bowser'){
             winImg.src = 'images/Mario-win.png'
+            winner.innerHTML = `<h3>MARIO DEFEATED BOWSER!!! PLAY AGAIN?</h3>`
+            
         } else if(target.name == 'Yoshi'){
             winImg.src = 'images/luigi-win.png'
+            winner.innerHTML = `<h3>LUIGI SMASHED YOSHI!!! PLAY AGAIN?</h3>`
+            
         } else{
             winImg.src = 'images/peach-win.png'
+            winner.innerHTML = `<h3>PRINCESS PEACH SMASHED TOAD!!! PLAY AGAIN?</h3>`
             
         }
         
-        document.getElementById('winner').innerHTML = `<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
+       
     }
 
     function update() {
