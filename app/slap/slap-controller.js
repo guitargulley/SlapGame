@@ -20,7 +20,7 @@ function SlapController() {
                 template += `<button type="button" class="btn" onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img" src="../../images/spike.png" style="width:25px;height:25px";></button>`
                 
             }else{
-                template += `<button type="button" class="btn"  onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img text-center" src="../../../images/shield.png" style="width:25px;height:25px"></button>`
+                template += `<button type="button" class="btn"  onclick="app.controllers.slapController.giveItems('` + item + `')"><img class="item-img text-center" src="../images/shield.png" style="width:25px;height:25px"></button>`
                 
             }
         }
