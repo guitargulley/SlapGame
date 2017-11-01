@@ -1,16 +1,12 @@
-
-
-
-
-
-
 function SlapService(){
-
 //private
 var players = {
     mario: new Target("Mario", 100, 1, 5, 10),
-    luigi: new Target("Luigi", 100, 1, 5, 10)
-
+    luigi: new Target("Luigi", 100, 1, 5, 10),
+    peach: new Target("Peach", 100, 1, 5, 10),
+    yoshi: new Target("Yoshi", 100, 1, 5, 10),
+    bowser: new Target("Bowser", 100, 1, 5, 10),
+    toad: new Target("Toad", 100, 1, 5, 10)
 }
 
 var target;

@@ -34,9 +34,18 @@ function SlapController() {
         document.getElementById('game-div').classList.add('hidden')
         document.getElementById('play-again').classList.remove('hidden')
         if (target.name == 'Mario') {
-            winImg.src = 'images/luigi-win.png'
-        } else {
+            winImg.src = 'images/bowser-win.png'
+        } else if(target.name == 'Luigi'){
+            winImg.src = 'images/yoshi-win.png'
+        } else if(target.name == 'Peach'){
+            winImg.src = 'images/toad-win.png'
+        }else if(target.name == 'Bowser'){
             winImg.src = 'images/Mario-win.png'
+        } else if(target.name == 'Yoshi'){
+            winImg.src = 'images/luigi-win.png'
+        } else{
+            winImg.src = 'images/peach-win.png'
+            
         }
         
         document.getElementById('winner').innerHTML = `<h3>CONGRATULATIONS, YOU WON!!! PLAY AGAIN?</h3>`
@@ -66,9 +75,16 @@ function SlapController() {
         document.getElementById('play').classList.add('hidden')
         if(target.name == 'Mario'){
             playerImg.src = 'images/Mario.png'
-        }else{
+        }else if(target.name == 'Luigi'){
             playerImg.src = 'images/Luigi.png'
-            
+        }else if(target.name == 'Peach'){
+            playerImg.src = 'images/Peach.png'
+        }else if(target.name == 'Yoshi'){
+            playerImg.src = 'images/Yoshi.png'
+        }else if(target.name == 'Toad'){
+            playerImg.src = 'images/Toad.png'
+        }else{
+            playerImg.src = 'images/Bowser.png'
         }
         update()
     }
